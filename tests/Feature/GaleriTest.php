@@ -7,9 +7,10 @@ use Tests\TestCase;
 
 class GaleriTest extends TestCase
 {
-    public function testGaleriHalamanBisaDiakses()
+    public function testHalamanGaleriBisaDiakses()
     {
         $response = $this->get('/galeri');
-        $response->assertStatus(200);
+        $response->assertStatus(200); // halaman berhasil diakses
+        $response->assertSee('Galeri'); // opsional, cek ada tulisan "Galeri" di halaman
     }
 }
