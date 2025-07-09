@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+{{ $undefinedVariable }}{{ $undefinedVariable }}{{ $undefinedVariable }}
 
 <head>
     <meta charset="utf-8">
