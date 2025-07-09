@@ -9,7 +9,7 @@ class GaleriTest extends TestCase
 {
     public function testGaleriHalamanBisaDiakses()
     {
-        $response = $this->get('/galeri');
+        $response = $this->get('/galeri-salah');
         $response->assertStatus(200);
     }
 }
