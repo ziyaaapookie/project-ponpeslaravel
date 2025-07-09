@@ -9,7 +9,7 @@ class LoginTest extends TestCase
 {
     public function testHalamanLoginBisaDiakses()
     {
-        $response = $this->get('/login');
+        $response = $this->get('/loginnnn');
         $response->assertStatus(200);
         $response->assertSee('Login'); // Sesuaikan dengan kata di halaman login
     }
