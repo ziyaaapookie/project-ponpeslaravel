@@ -1,4 +1,3 @@
-{{ $undefinedVariable }}
 <!DOCTYPE html>
 <html lang="id">
 
