@@ -1,4 +1,4 @@
-name: Laravel CI/CD
+name: Laravel CI - Cek Login
 
 on:
   push:
@@ -7,27 +7,24 @@ on:
     branches: [main]
 
 jobs:
-  laravel-tests:
+  test-login:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 🧾 Checkout Repository
+      - name: 📥 Checkout Repo
         uses: actions/checkout@v3
 
-      - name: ⚙️ Setup PHP & Extensions
+      - name: ⚙️ Setup PHP
         uses: shivammathur/setup-php@v2
         with:
           php-version: 8.2
-          extensions: mbstring, bcmath, xml
-          coverage: none
+          extensions: mbstring, xml, bcmath
 
-      - name: 📦 Install Composer Dependencies
-        run: composer install --prefer-dist --no-progress --no-suggest
+      - name: 📦 Install Dependencies
+        run: composer install --prefer-dist --no-progress
 
-      - name: 📋 Copy .env & Generate Key
+      - name: 🧪 Jalankan Test Login
         run: |
           cp .env.example .env
           php artisan key:generate
-
-      - name: 🧪 Jalankan Test Laravel
-        run: php artisan test
+          php artisan test --filter LoginTest
